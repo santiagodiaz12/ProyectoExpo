@@ -52,29 +52,33 @@
             <!-- 2. Lo que necesitas (Materiales) -->
             <section>
                 <h2 class="text-2xl font-bold text-gray-800 section-title mb-4">
-                    2. Las Piezas Clave (Componentes)
+                    2. Componentes
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <ul class="space-y-3 p-4 bg-blue-50 rounded-lg border border-blue-200">
                         <li class="flex items-center space-x-2">
                             <span class="text-blue-500 font-extrabold text-lg">✨</span>
-                            <span>**Arduino Uno:** El "cerebro" que controla todo.</span>
+                            <span>Arduino Uno: El controlador.</span>
                         </li>
                         <li class="flex items-center space-x-2">
                             <span class="text-blue-500 font-extrabold text-lg">✨</span>
-                            <span>**Teclado 4x4:** Donde escribes tu clave secreta.</span>
+                            <span>Teclado 4x4: Donde escribis la clave.</span>
                         </li>
                         <li class="flex items-center space-x-2">
                             <span class="text-blue-500 font-extrabold text-lg">✨</span>
-                            <span>**Pantalla LCD (16x2 I2C):** Muestra los mensajes (como "INGRESE SU CLAVE").</span>
+                            <span>Pantalla LCD: Muestra los mensajes.</span>
                         </li>
                         <li class="flex items-center space-x-2">
                             <span class="text-blue-500 font-extrabold text-lg">✨</span>
-                            <span>**2 x Servomotores:** Actúan como el pestillo de la caja fuerte.</span>
+                            <span>2 x Servomotores: Actúan como el pestillo de la caja fuerte.</span>
+                        </li>
+                         <li class="flex items-center space-x-2">
+                            <span class="text-blue-500 font-extrabold text-lg">✨</span>
+                            <span>Pila 9V: Le da voltaje extra al circuito.</span>
                         </li>
                         <li class="flex items-center space-x-2">
                             <span class="text-blue-500 font-extrabold text-lg">✨</span>
-                            <span>**Cables Jumper:** Los "hilos" que conectan todas las piezas.</span>
+                            <span>Cables Jumper: Los que conectan las piezas.</span>
                         </li>
                     </ul>
                     <div class="bg-gray-100 p-4 rounded-lg flex items-center justify-center">
@@ -87,15 +91,15 @@
             <!-- 3. Cómo conectarlo (Diagrama) -->
             <section>
                 <h2 class="text-2xl font-bold text-gray-800 section-title mb-4">
-                    3. Instrucciones de Montaje: Conecta los Cables
+                    3. Instrucciones de Armado
                 </h2>
                 <p class="text-gray-600 mb-4">
-                    Sigue esta imagen para conectar las piezas. ¡Es la parte más importante! Asegúrate de que cada cable vaya al pin correcto en el Arduino.
+                    Sigue esta imagen para conectar las piezas. Asegúrate de que cada cable vaya al pin correcto en el Arduino.
                 </p>
 
                 <div class="border-4 border-blue-300 p-2 rounded-xl bg-white shadow-lg flex justify-center">
                     <!-- Se usa la imagen que el usuario subió -->
-                    <img src="./img/imagenExpo.png" alt="Diagrama de conexión de la caja fuerte con Arduino, teclado, LCD y dos servomotores." class="max-w-full h-auto rounded">
+                    <img src="imagenExpo.png" alt="Diagrama de conexión de la caja fuerte con Arduino, teclado, LCD y dos servomotores." class="max-w-full h-auto rounded">
                 </div>
                 
                 <h3 class="text-xl font-semibold text-gray-700 mt-6 mb-2">Tabla de Conexiones Clave:</h3>
@@ -124,12 +128,12 @@
                                 <td class="py-2 px-3">SDA, SCL</td>
                                 <td class="py-2 px-3">A4, A5</td>
                             </tr>
-                            <tr class="bg-white">
+                            <tr class="bg-white border-b">
                                 <td class="py-2 px-3 font-medium">Servomotor 1 (Apertura)</td>
                                 <td class="py-2 px-3">Señal</td>
                                 <td class="py-2 px-3">D12</td>
                             </tr>
-                            <tr class="bg-gray-50">
+                            <tr class="bg-gray-50 border-b">
                                 <td class="py-2 px-3 font-medium">Servomotor 2 (Bloqueo)</td>
                                 <td class="py-2 px-3">Señal</td>
                                 <td class="py-2 px-3">D3</td>
@@ -142,38 +146,38 @@
             <!-- 4. Cómo usar el código -->
             <section>
                 <h2 class="text-2xl font-bold text-gray-800 section-title mb-4">
-                    4. El Código: La Magia de la Programación
+                    4. ¿Que hace el Código?
                 </h2>
                 <p class="text-gray-600 mb-4">
-                    Este programa le dice al Arduino cómo debe funcionar la caja fuerte.
+                    Este codigo le dice al Arduino cómo debe funcionar la caja fuerte.
                 </p>
 
                 <ul class="list-disc list-inside space-y-3 p-4 bg-yellow-100 rounded-lg border border-yellow-300 text-gray-700">
                     <li>
-                        <strong class="text-blue-700">La Clave Secreta:</strong> La clave que viene de fábrica es **<span class="font-mono text-red-600">1234</span>**.
+                        <strong class="text-blue-700">La Clave Maestra:</strong> La clave que viene de fábrica es **<span class="font-mono text-red-600">1234</span>**.
                     </li>
                     <li>
-                        <strong class="text-blue-700">Al Encender:</strong> Los dos motores se colocan en la posición **cerrada** (0 grados). La pantalla te pide la clave.
+                        <strong class="text-blue-700">Al Encender:</strong> Los dos motores se colocan en la posición cerrada (0 grados). La pantalla te pide la clave.
                     </li>
                     <li>
                         <strong class="text-blue-700">Ingresando la Clave:</strong> Cuando presionas una tecla, se muestra en la pantalla hasta que llegas a los 4 caracteres.
                     </li>
                     <li>
-                        <strong class="text-blue-700">¡Clave Correcta!:</strong> Si aciertas, la pantalla dice "Correcta", el motor principal (Servomotor 1) se mueve a 90 grados (**ABIERTO**). Después de 3 segundos, se vuelve a cerrar solo para proteger tu caja.
+                        <strong class="text-blue-700">Clave Correcta:</strong> Si acertas, la pantalla dice "Correcta", el motor principal (Servomotor 1) se mueve a 90 grados (ABIERTO). Después de 3 segundos, se vuelve a cerrar solo para proteger tu caja.
                     </li>
                     <li>
-                        <strong class="text-blue-700">¡Clave Incorrecta!:</strong> Si fallas, la pantalla dice "Incorrecta" y te pide que lo intentes de nuevo.
+                        <strong class="text-blue-700">Clave Incorrecta:</strong> Si fallas, la pantalla dice "Incorrecta" y te pide que lo intentes de nuevo.
                     </li>
                 </ul>
 
-                <h3 class="text-xl font-semibold text-gray-700 mt-6 mb-2">Truco Extra: Cambiar la Clave</h3>
+                <h3 class="text-xl font-semibold text-gray-700 mt-6 mb-2">Como Cambiar la Clave</h3>
                 <p class="text-gray-600">
-                    Si quieres cambiar la clave (¡de <span class="font-mono text-red-600">1234</span> a otra cosa!), puedes hacerlo así:
+                    Si quieres cambiar la clave (de <span class="font-mono text-red-600">1234</span> a otra cosa), puedes hacerlo así:
                 </p>
                 <ol class="list-decimal list-inside space-y-2 p-4 bg-indigo-100 rounded-lg">
-                    <li>Conecta el Arduino al computador y abre el **Monitor Serial** en el programa de Arduino.</li>
+                    <li>Conecta el Arduino a la computadora y abre el **Monitor Serial** en el programa de Arduino.</li>
                     <li>Asegúrate de que la velocidad diga **9600 baudios**.</li>
-                    <li>Escribe la **nueva clave de 4 letras o números** (ej: *ABCD*) y presiona Enter.</li>
+                    <li>Escribe la nueva clave de 4 letras o números (ej: *ABCD*) y presiona Enter.</li>
                     <li>Si lo haces bien, la pantalla dirá "CLAVE ACTUALIZADA!".</li>
                 </ol>
             </section>
@@ -181,7 +185,7 @@
             <!-- 5. ¡A Jugar! (Instrucciones de Uso) -->
             <section>
                 <h2 class="text-2xl font-bold text-gray-800 section-title mb-4">
-                    5. ¡A Jugar! Pasos para Abrir tu Caja Fuerte
+                    5. Los Pasos para Abrir tu Caja Fuerte
                 </h2>
                 <div class="space-y-4">
                     <div class="bg-green-100 p-4 rounded-lg shadow-md flex items-center space-x-3">
@@ -190,15 +194,15 @@
                     </div>
                     <div class="bg-green-100 p-4 rounded-lg shadow-md flex items-center space-x-3">
                         <span class="text-2xl text-green-600 font-bold">2.</span>
-                        <p class="text-gray-700"><strong class="text-green-700">Escribe:</strong> Ingresa la clave secreta de 4 dígitos (¡Recuerda que la inicial es <span class="font-mono text-red-600">1234</span>!).</p>
+                        <p class="text-gray-700"><strong class="text-green-700">Escribe:</strong> Ingresa la clave maestra de 4 dígitos (La clave inicial es <span class="font-mono text-red-600">1234</span>).</p>
                     </div>
                     <div class="bg-green-100 p-4 rounded-lg shadow-md flex items-center space-x-3">
                         <span class="text-2xl text-green-600 font-bold">3.</span>
-                        <p class="text-gray-700"><strong class="text-green-700">Apertura:</strong> Si es correcta, el motor se mueve. ¡Abre la caja rápido!</p>
+                        <p class="text-gray-700"><strong class="text-green-700">Apertura:</strong> Si es correcta, el servomotor se mueve y abre la caja </p>
                     </div>
                     <div class="bg-green-100 p-4 rounded-lg shadow-md flex items-center space-x-3">
                         <span class="text-2xl text-green-600 font-bold">4.</span>
-                        <p class="text-gray-700"><strong class="text-green-700">Cierre:</strong> Después de un momento, el motor vuelve a cerrar la caja automáticamente.</p>
+                        <p class="text-gray-700"><strong class="text-green-700">Cierre:</strong> Después de 3 segundos, el servomotor vuelve a cerrar la caja automáticamente.</p>
                     </div>
                 </div>
             </section>
